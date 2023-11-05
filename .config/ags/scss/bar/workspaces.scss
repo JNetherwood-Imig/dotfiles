@@ -1,0 +1,63 @@
+@import '../colors.scss';
+
+.workspaces__panel {
+	margin: 0px;
+    .eventbox {
+	    border: none;
+      button {
+	      border: none;
+        .indicator {
+          border-color: $foreground;
+          border-width: 2px;
+          border-style: solid;
+          border-radius: 99px;
+        }
+  
+        &.active {
+          .indicator {
+            border-color: $accent;
+          }
+        }
+      }
+    }
+  
+    button {
+      background-color: transparent;
+      padding: 0 3px;
+      border: none;
+  
+      /* &.active {
+        .indicator .fill {
+          min-width: 20px;
+        }
+      } */
+  
+      .indicator .fill {
+        margin: 2px;
+        min-width: 8px;
+        min-height: 8px;
+        border-radius: 99px;
+      }
+  
+      &.occupied {
+        .indicator .fill {
+          background-color: $foreground;
+        }
+  
+        &.active .indicator .fill {
+          background-color: $accent;
+        }
+  
+        &:hover .indicator .fill {
+          background-color: $accent;
+        }
+      }
+  
+      &:hover {
+        background-color: transparent;
+        .indicator {
+          border-color: $accent;
+        }
+      }
+    }
+  }

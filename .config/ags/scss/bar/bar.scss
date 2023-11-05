@@ -1,0 +1,26 @@
+@import '../colors.scss';
+
+label {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.bar {
+  background-color: $background;
+}
+
+.media {
+  background-color: transparent;
+  border: none;
+  color: $foreground;
+}
+
+.media:hover {
+  color: $accent;
+}
+
+.clock {
+  margin: 0 10px;
+  font-size: 1.2em;
+  font-family: "JetBrains Mono Regular";
+}

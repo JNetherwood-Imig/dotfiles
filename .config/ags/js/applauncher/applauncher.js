@@ -1,0 +1,115 @@
+import Widget from 'resource:///com/github/Aylur/ags/widget.js';
+import App from 'resource:///com/github/Aylur/ags/app.js';
+import Applications from 'resource:///com/github/Aylur/ags/service/applications.js';
+
+const WINDOW_NAME = 'applauncher';
+
+//  widget representing an app
+const AppItem = app => Widget.Button({
+	className: 'app',
+    onClicked: () => {
+        App.closeWindow(WINDOW_NAME);
+        app.launch();
+    },
+    child: Widget.Box({
+        children: [
+            Widget.Icon({
+                icon: app.iconName,
+                size: 42,
+            }),
+            Widget.Box({
+                vertical: true,
+                valign: 'center',
+                children: [
+                    Widget.Label({
+                        className: 'app-title',
+                        label: app.name,
+                        xalign: 0,
+                        valign: 'center',
+                        truncate: 'end',
+                    }),
+                    Widget.Label({
+                        className: 'app-description',
+                        label: app.description || '',
+                        wrap: true,
+                        xalign: 0,
+                        justification: 'left',
+                        valign: 'center',
+                    }),
+                ],
+            }),
+        ],
+    }),
+});
+
+// widget showing an entry and list of AppItems
+const Applauncher = ({ width, height, spacing }) => {
+    const list = Widget.Box({
+        vertical: true,
+        spacing,
+    });
+
+    const entry = Widget.Entry({
+		className: 'app-search',
+        hexpand: true,
+        style: `margin-bottom: ${spacing}px;`,
+
+        // set some text so onChange works the first time
+        text: 'search',
+
+        // to launch the first item on Enter
+        onAccept: ({ text }) => {
+            const list = Applications.query(text);
+            if (list[0]) {
+                App.toggleWindow(WINDOW_NAME);
+                list[0].launch();
+            }
+        },
+
+        // filter out the list
+        onChange: ({ text }) => {
+            list.children = Applications.query(text).map(AppItem);
+        },
+    });
+
+    return Widget.Box({
+        vertical: true,
+        style: `margin: ${spacing * 2}px;`,
+        children: [
+            entry,
+
+            // wrap the list in a scrollable
+            Widget.Scrollable({
+                hscroll: 'never',
+                style: `
+                    min-width: ${width}px;
+                    min-height: ${height}px;
+                `,
+                child: list,
+            }),
+        ],
+
+        // make entry.text empty on launch
+        connections: [[App, (_, name, visible) => {
+            if (name !== WINDOW_NAME)
+                return;
+
+            entry.text = '';
+            if (visible)
+                entry.grab_focus();
+        }]],
+    });
+};
+
+// the window containing the Applauncher
+export default Widget.Window({
+    name: WINDOW_NAME,
+    popup: true,
+    focusable: true,
+	className: 'applauncher',
+    child: Applauncher({
+        width: 500,
+        height: 500,
+        spacing: 12,
+    }),
+});

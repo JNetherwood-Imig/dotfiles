@@ -1,0 +1,16 @@
+@import "../colors.scss";
+
+.applauncher {
+	background: $background;
+	border-radius: 10px;
+	border: 3px solid white;
+}
+
+.app,
+.app-search {
+	background: rgba(255, 255, 255, 0.2);
+	min-height: 40px;
+	&:hover {
+		background: $accent;
+	}
+}

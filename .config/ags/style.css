@@ -1,0 +1,166 @@
+.workspaces__panel {
+  margin: 0px; }
+  .workspaces__panel .eventbox {
+    border: none; }
+    .workspaces__panel .eventbox button {
+      border: none; }
+      .workspaces__panel .eventbox button .indicator {
+        border-color: #ffffff;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 99px; }
+      .workspaces__panel .eventbox button.active .indicator {
+        border-color: #88C0D0; }
+  .workspaces__panel button {
+    background-color: transparent;
+    padding: 0 3px;
+    border: none;
+    /* &.active {
+        .indicator .fill {
+          min-width: 20px;
+        }
+      } */ }
+    .workspaces__panel button .indicator .fill {
+      margin: 2px;
+      min-width: 8px;
+      min-height: 8px;
+      border-radius: 99px; }
+    .workspaces__panel button.occupied .indicator .fill {
+      background-color: #ffffff; }
+    .workspaces__panel button.occupied.active .indicator .fill {
+      background-color: #88C0D0; }
+    .workspaces__panel button.occupied:hover .indicator .fill {
+      background-color: #88C0D0; }
+    .workspaces__panel button:hover {
+      background-color: transparent; }
+      .workspaces__panel button:hover .indicator {
+        border-color: #88C0D0; }
+
+label {
+  font-weight: bold;
+  font-size: 1.2em; }
+
+.bar {
+  background-color: rgba(43, 43, 43, 0.7); }
+
+.media {
+  background-color: transparent;
+  border: none;
+  color: #ffffff; }
+
+.media:hover {
+  color: #88C0D0; }
+
+.clock {
+  margin: 0 10px;
+  font-size: 1.2em;
+  font-family: "JetBrains Mono Regular"; }
+
+.volume-bar {
+  min-height: 16px;
+  min-width: 120px;
+  padding: 0 10px; }
+
+.volume-button,
+.microphone-button {
+  background: transparent;
+  border: none; }
+
+highlight {
+  background-color: #88C0D0;
+  background-size: 0;
+  color: #88C0D0;
+  min-height: 16px;
+  border-radius: 8px; }
+
+slider {
+  background-size: 0;
+  border: none; }
+
+trough {
+  min-height: 16px;
+  border-radius: 8px;
+  background-color: #FFF; }
+
+.logo {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+  margin-left: 5px; }
+
+.powermenu-icon {
+  background-color: transparent;
+  border: none;
+  color: #BB5566;
+  font-size: 1.3em; }
+
+.applauncher {
+  background: rgba(43, 43, 43, 0.7);
+  border-radius: 10px;
+  border: 3px solid white; }
+
+.app,
+.app-search {
+  background: rgba(255, 255, 255, 0.2);
+  min-height: 40px; }
+  .app:hover,
+  .app-search:hover {
+    background: #88C0D0; }
+
+.powermenu-box {
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 20px;
+  padding: 10px; }
+
+.shutdown-icon,
+.reboot-icon,
+.logout-icon,
+.lock-icon,
+.close-icon {
+  min-width: 200px;
+  min-height: 200px;
+  background-color: rgba(43, 43, 43, 0.7);
+  margin: 10px;
+  border-radius: 10px; }
+  .shutdown-icon:hover,
+  .reboot-icon:hover,
+  .logout-icon:hover,
+  .lock-icon:hover,
+  .close-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2); }
+
+.shutdown-icon {
+  font-size: 5em;
+  color: #BB5566;
+  border: 3px solid #BB5566; }
+  .shutdown-icon:hover {
+    font-size: 6em; }
+
+.reboot-icon {
+  font-size: 5.5em;
+  color: #BB6655;
+  border: 3px solid #BB6655; }
+  .reboot-icon:hover {
+    font-size: 6.5em; }
+
+.logout-icon {
+  font-size: 7em;
+  color: #BB9955;
+  border: 3px solid #BB9955; }
+  .logout-icon:hover {
+    font-size: 8em; }
+
+.lock-icon {
+  font-size: 4.7em;
+  color: #55BB66;
+  border: 3px solid #55BB66; }
+  .lock-icon:hover {
+    font-size: 5.7em; }
+
+.close-icon {
+  font-size: 4.7em;
+  color: #BB5566;
+  border: 3px solid #BB5566; }
+  .close-icon:hover {
+    font-size: 5.7em; }

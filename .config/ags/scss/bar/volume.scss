@@ -1,0 +1,32 @@
+$height: 16px;
+
+.volume-bar {
+    min-height: $height;
+	min-width: 120px;
+	padding: 0 10px;
+}
+
+.volume-button,
+.microphone-button {
+    background: transparent;
+	border: none;
+}
+
+highlight {
+    background-color: $accent;
+	background-size: 0;
+	color: $accent;
+    min-height: $height;
+    border-radius: $height / 2;
+}
+
+slider {
+	background-size: 0;
+	border: none;
+}
+
+trough {
+    min-height: $height;
+    border-radius: $height / 2;
+	background-color: #FFF;
+}

@@ -1,0 +1,66 @@
+@import "../colors.scss";
+
+.powermenu-box {
+	background-color: transparent;
+	border: 3px solid white;
+	border-radius: 20px;
+	padding: 10px;
+}
+.shutdown-icon,
+.reboot-icon,
+.logout-icon,
+.lock-icon,
+.close-icon {
+	min-width: 200px;
+	min-height: 200px;
+	background-color: $background;
+	margin: 10px;
+	border-radius: 10px;
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+}
+
+.shutdown-icon {
+	font-size: 5em;
+	color: #BB5566;
+	border: 3px solid #BB5566;
+	&:hover {
+		font-size: 6em;
+	}
+}
+
+.reboot-icon {
+	font-size: 5.5em;
+	color: #BB6655;
+	border: 3px solid #BB6655;
+	&:hover {
+		font-size: 6.5em;
+	}
+}
+
+.logout-icon {
+	font-size: 7em;
+	color: #BB9955;
+	border: 3px solid #BB9955;
+	&:hover {
+		font-size: 8em;
+	}
+}
+
+.lock-icon {
+	font-size: 4.7em;
+	color: #55BB66;
+	border: 3px solid #55BB66;
+	&:hover {
+		font-size: 5.7em;
+	}
+}
+.close-icon {
+	font-size: 4.7em;
+	color: #BB5566;
+	border: 3px solid #BB5566;
+	&:hover {
+		font-size: 5.7em;
+	}
+}
