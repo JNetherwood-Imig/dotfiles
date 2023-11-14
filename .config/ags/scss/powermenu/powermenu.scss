@@ -2,8 +2,12 @@
 
 .powermenu-box {
 	background-color: transparent;
+	border: none;
+}
+.powermenu {
+	background-color: #2b2b2b;
 	border: 3px solid white;
-	border-radius: 20px;
+	border-radius: 0px;
 	padding: 10px;
 }
 .shutdown-icon,
@@ -13,9 +17,9 @@
 .close-icon {
 	min-width: 200px;
 	min-height: 200px;
-	background-color: $background;
+	background-color: #1b1b1b;
 	margin: 10px;
-	border-radius: 10px;
+	border-radius: 0px;
 	&:hover {
 		background-color: rgba(255, 255, 255, 0.2);
 	}

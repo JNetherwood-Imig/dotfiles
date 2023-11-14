@@ -21,12 +21,13 @@ highlight {
 }
 
 slider {
-	background-size: 0;
+	background-size: 0px;
 	border: none;
+	background-color: transparent;
 }
 
 trough {
     min-height: $height;
     border-radius: $height / 2;
-	background-color: #FFF;
+	// background-color: #FFF;
 }

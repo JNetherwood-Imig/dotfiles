@@ -1,6 +1,7 @@
 import { Box, CenterBox, Window } from 'resource:///com/github/Aylur/ags/widget.js'
 import Logo from './components/logo.js';
 import Workspaces from './components/workspaces.js';
+import ClientTitle from './components/client.js';
 import Volume from './components/volume.js';
 import Clock from './components/clock.js';
 import PowermenuIcon from './components/powermenu-icon.js'
@@ -14,7 +15,7 @@ const Left = () => Box({
 
 const Center = () => Box({
     children: [
-		// Dock?
+		ClientTitle(),
     ],
 });
 
