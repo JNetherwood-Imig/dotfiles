@@ -3,11 +3,11 @@ $height: 16px;
 .volume-bar {
     min-height: $height;
 	min-width: 120px;
-	padding: 0 10px;
+	padding: 0 5px;
 }
 
-.volume-button,
-.microphone-button {
+// microphone-button,
+.volume-button {
     background: transparent;
 	border: none;
 }

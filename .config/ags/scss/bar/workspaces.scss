@@ -1,6 +1,6 @@
 @import '../colors.scss';
 
-.workspaces__panel {
+.workspaces_panel {
 	margin: 0px;
     .eventbox {
 	    border: none;
@@ -26,11 +26,11 @@
       padding: 0 3px;
       border: none;
   
-      /* &.active {
+      &.active {
         .indicator .fill {
           min-width: 20px;
         }
-      } */
+      }
   
       .indicator .fill {
         margin: 2px;

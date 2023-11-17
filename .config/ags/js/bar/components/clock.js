@@ -4,7 +4,7 @@ import { execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
 export default () => Label({
     className: 'clock',
     connections: [
-        [1000, self => execAsync(['date', '+%H:%M:%S'])
+        [1000, self => execAsync(['date', '+%H:%M'])
             .then(date => self.label = date).catch(console.error)],
     ],
 });

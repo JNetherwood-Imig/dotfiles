@@ -1,7 +1,6 @@
 @import '../colors.scss';
 
 label {
-  font-weight: bold;
   font-size: 1.2em;
 }
 
@@ -20,12 +19,7 @@ label {
 }
 
 .clock {
-  margin: 0 10px;
+  margin: 5px 10px 0 10px;
   font-size: 1.2em;
   font-family: "JetBrains Mono Regular";
-}
-
-.client-title {
-	font-size: 1.2em;
-	font-weight: normal;
 }

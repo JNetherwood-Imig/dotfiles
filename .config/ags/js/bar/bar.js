@@ -15,7 +15,7 @@ const Left = () => Box({
 
 const Center = () => Box({
     children: [
-		ClientTitle(),
+		Clock(),
     ],
 });
 
@@ -23,7 +23,6 @@ const Right = () => Box({
 	halign: 'end',
     children: [
 		Volume(),
-		Clock(),
 		PowermenuIcon(),
     ],
 });
@@ -33,7 +32,7 @@ export default monitor => Window({
 	className: 'bar',
 	monitor,
 	exclusive: true,
-	anchor: ['bottom', 'left', 'right'],
+	anchor: ['top', 'left', 'right'],
 	child: CenterBox({
 	    startWidget: Left(),
 	    centerWidget: Center(),

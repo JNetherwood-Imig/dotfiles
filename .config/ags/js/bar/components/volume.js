@@ -18,6 +18,22 @@ const volumeBox = () => EventBox({
 	}]],
 	child: Box({
 		children: [
+			Revealer({
+				transitionDuration: 500,
+				transition: 'slide_right',
+				child: Slider({
+					className: 'volume-bar',
+					hexpand: true,
+					drawValue: false,
+					onChange: ({ value }) => (Audio.speaker.volume = value * 1.5),
+					connections: [[Audio, (self) => {
+						self.value = Audio.speaker?.volume / 1.5 || 0;
+					},'speaker-changed']],
+				}),
+				connections: [[showVolumeBar, self => {
+					self.revealChild = showVolumeBar.getValue();
+				}]],
+			}),
 			Button({
 				className: 'volume-button',
 				onPrimaryClick: () => Audio.speaker.isMuted = !Audio.speaker.isMuted,
@@ -39,29 +55,13 @@ const volumeBox = () => EventBox({
 					}, 'speaker-changed']],
 				}),  
 			}),
-			Revealer({
-				transitionDuration: 500,
-				transition: 'slide_right',
-				child: Slider({
-					className: 'volume-bar',
-					hexpand: true,
-					drawValue: false,
-					onChange: ({ value }) => (Audio.speaker.volume = value * 1.5),
-					connections: [[Audio, (self) => {
-						self.value = Audio.speaker?.volume / 1.5 || 0;
-					},'speaker-changed']],
-				}),
-				connections: [[showVolumeBar, self => {
-					self.revealChild = showVolumeBar.getValue();
-				}]],
-			}),
 		],
 	}),
 })
 
 export default () => Box({
 	children: [
-		Button({
+		/* Button({
 			className: 'microphone-button',
 			onPrimaryClick: () => Audio.microphone.isMuted = !Audio.microphone.isMuted,
 			child: Stack({
@@ -77,7 +77,7 @@ export default () => Box({
 					}
 				}, 'microphone-changed']],
 			}),
-		}),
+		}), */
 		volumeBox(),
 	],
 });

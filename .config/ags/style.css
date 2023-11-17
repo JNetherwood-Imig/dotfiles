@@ -1,47 +1,43 @@
-.workspaces__panel {
+.workspaces_panel {
   margin: 0px; }
-  .workspaces__panel .eventbox {
+  .workspaces_panel .eventbox {
     border: none; }
-    .workspaces__panel .eventbox button {
+    .workspaces_panel .eventbox button {
       border: none; }
-      .workspaces__panel .eventbox button .indicator {
+      .workspaces_panel .eventbox button .indicator {
         border-color: #ffffff;
         border-width: 2px;
         border-style: solid;
         border-radius: 99px; }
-      .workspaces__panel .eventbox button.active .indicator {
+      .workspaces_panel .eventbox button.active .indicator {
         border-color: #88C0D0; }
-  .workspaces__panel button {
+  .workspaces_panel button {
     background-color: transparent;
     padding: 0 3px;
-    border: none;
-    /* &.active {
-        .indicator .fill {
-          min-width: 20px;
-        }
-      } */ }
-    .workspaces__panel button .indicator .fill {
+    border: none; }
+    .workspaces_panel button.active .indicator .fill {
+      min-width: 20px; }
+    .workspaces_panel button .indicator .fill {
       margin: 2px;
       min-width: 8px;
       min-height: 8px;
       border-radius: 99px; }
-    .workspaces__panel button.occupied .indicator .fill {
+    .workspaces_panel button.occupied .indicator .fill {
       background-color: #ffffff; }
-    .workspaces__panel button.occupied.active .indicator .fill {
+    .workspaces_panel button.occupied.active .indicator .fill {
       background-color: #88C0D0; }
-    .workspaces__panel button.occupied:hover .indicator .fill {
+    .workspaces_panel button.occupied:hover .indicator .fill {
       background-color: #88C0D0; }
-    .workspaces__panel button:hover {
+    .workspaces_panel button:hover {
       background-color: transparent; }
-      .workspaces__panel button:hover .indicator {
+      .workspaces_panel button:hover .indicator {
         border-color: #88C0D0; }
 
 label {
-  font-weight: bold;
   font-size: 1.2em; }
 
 .bar {
-  background-color: rgba(43, 43, 43, 0.7); }
+  background-color: rgba(43, 43, 43, 0.9); }
 
 .media {
   background-color: transparent;
@@ -52,21 +48,16 @@ label {
   color: #88C0D0; }
 
 .clock {
-  margin: 0 10px;
+  margin: 5px 10px 0 10px;
   font-size: 1.2em;
   font-family: "JetBrains Mono Regular"; }
-
-.client-title {
-  font-size: 1.2em;
-  font-weight: normal; }
 
 .volume-bar {
   min-height: 16px;
   min-width: 120px;
-  padding: 0 10px; }
+  padding: 0 5px; }
 
-.volume-button,
-.microphone-button {
+.volume-button {
   background: transparent;
   border: none; }
 
@@ -99,7 +90,7 @@ trough {
   font-size: 1.3em; }
 
 .applauncher {
-  background: rgba(43, 43, 43, 0.7);
+  background: rgba(43, 43, 43, 0.9);
   border-radius: 0px;
   border: 3px solid white; }
 

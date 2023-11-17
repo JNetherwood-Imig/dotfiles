@@ -29,7 +29,7 @@ Box({
     export default (props) =>
     Box({
     ...props,
-    className: "workspaces__panel panel-button",
+    className: "workspaces_panel",
     children: [
       Box({
         children: [
