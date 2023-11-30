@@ -1,10 +1,10 @@
+local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
-local nvkeymap = vim.api.nvim_set_keymap
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>of", vim.cmd.Ex)
+keymap.set("n", "+", "<C-a>")
+keymap.set("n", "-", "<C-x>")
+keymap.set("n", "<leader>l", vim.cmd.Lazy)
+keymap.set("n", "<C-a>", "gg<S-v>G")
 
-nvkeymap("", "<Space>", "<Nop>", opts)
-
-nvkeymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
