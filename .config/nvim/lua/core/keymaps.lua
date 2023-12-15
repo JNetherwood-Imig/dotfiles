@@ -8,3 +8,6 @@ keymap.set("n", "-", "<C-x>")
 keymap.set("n", "<leader>l", vim.cmd.Lazy)
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
+keymap.set("v", "<Tab>", ">")
+keymap.set("v", "<S-Tab>", "<")
+
