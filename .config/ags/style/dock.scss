@@ -1,0 +1,24 @@
+@import "colors";
+
+.dock {
+	background-color: transparent;
+	.container {
+		padding: 5px 5px 0 5px;
+	}
+	.revealer {
+		font-size: 50px;
+	}
+	button {
+		background-color: transparent;
+	}
+	button:hover {
+		font-size: 60px;
+	}
+	.apps {
+		border: 1px solid $border;
+		background-color: transparentize($background, 0.3);
+		border-radius: 20px;
+	}
+}
+
+

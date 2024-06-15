@@ -1,0 +1,60 @@
+@import "colors.scss";
+
+.player {
+  padding: 10px;
+  background-color: $background;
+  border-radius: 10px;
+  border: 1px solid $border;
+}
+  
+.player .cover {
+  min-width: 100px;
+  min-height: 100px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  margin-right: 1em;
+}
+
+.player .position {
+  padding: 10px;
+}
+
+.player .title {
+  font-size: 1.2em;
+}
+
+.player.artist {
+  font-size: 1.1em;
+}
+
+.player scale.position {
+  padding: 0;
+  margin-bottom: .3em;
+}
+
+.player scale.position trough {
+  min-height: 8px;
+  border-radius: 4px;
+}
+
+.player scale.position highlight {
+  background-color: $foreground;
+  border-radius: 4px;
+}
+
+.player scale.position slider {
+  all: unset;
+}
+
+.player button {
+  min-height: 1em;
+  min-width: 1em;
+  padding: 0 .3em;
+  border-radius: .3em;
+}
+
+.player button.play-pause {
+  margin: 0 .3em;
+}
+  

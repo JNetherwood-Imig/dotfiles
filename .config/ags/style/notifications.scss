@@ -1,0 +1,27 @@
+@import "colors.scss";
+.notifications {
+    background-color: transparent;
+    color: $foreground;
+    .image {
+        min-width: 78px;
+        min-height: 78px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 5px;
+        margin-right: 1em;
+    }
+    .content {
+        color: $foreground;
+        background-color: $background;
+        margin: 5px;
+        border-radius: 10px;
+        padding: 5px;
+        .close-button {
+            border-radius: 50%;
+            background-color: red;
+        }
+        .description {
+            min-width: 350px;
+        }
+    }
+}

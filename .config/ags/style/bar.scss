@@ -1,0 +1,48 @@
+@import "colors.scss";
+
+window.bar {
+  background-color: transparentize($background, 0.3);
+  border-bottom: 1px solid $border;
+  button {
+    background-color: transparent;
+  }
+}
+
+$workspace-transition: 300ms;
+
+.workspaces {
+  padding-left: 5px;
+}
+
+.workspaces label {
+  font-size: 0;
+  min-width: 10px;
+  min-height: 10px;
+  border-radius: 5px;
+  background-color: gray;
+  margin: 0 4px;
+  transition-duration: $workspace-transition;
+}
+
+.workspaces label.occupied {
+  min-width: 15px;
+  min-height: 15px;
+  background-color: $foreground;
+  transition-duration: $workspace-transition;
+}
+
+.workspaces label.active {
+  min-width: 30px;
+  min-height: 15px;
+  background-color: $accent;
+  transition-duration: $workspace-transition;
+}
+
+.clock {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+.notification-button {
+  font-size: 1.25em;
+}
