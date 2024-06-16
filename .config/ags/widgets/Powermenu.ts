@@ -4,8 +4,10 @@ import Power from "service/Power"
 const WINDOW_NAME = "powermenu";
 
 const PowerButton = (callback: () => any, icon: string) => Widget.Button({
-    hexpand: true,
-    vexpand: true,
+    widthRequest: 200,
+    heightRequest: 200,
+    hpack: "center",
+    vpack: "center",
     className: "power-button",
     onClicked: () => {
         App.closeWindow(WINDOW_NAME);
@@ -17,12 +19,12 @@ const PowerButton = (callback: () => any, icon: string) => Widget.Button({
 export default () => Widget.Window({
     name: WINDOW_NAME,
     className: WINDOW_NAME,
-    widthRequest: 1200,
-    heightRequest: 200,
     visible: false,
+    anchor: ["top", "bottom", "left", "right"],
     keymode: "exclusive",
     setup: self => {self.keybind("Escape", () => App.closeWindow(WINDOW_NAME)); Power.lock_cmd = "hyprlock";},
     child: Widget.Box({
+	    hpack: "center",
         children: [
             PowerButton(
                 () => Power.lock(),
