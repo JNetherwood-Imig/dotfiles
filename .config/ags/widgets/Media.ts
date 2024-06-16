@@ -18,7 +18,7 @@ function Player(player: MprisPlayer) {
         className: "cover",
         vpack: "start",
         hexpand: false,
-        css: player.bind("cover_path").transform(p => `background-image: url('${p}')`),
+        css: Utils.merge([player.bind("cover_path"), player.bind("track_cover_url")], (path, url) => `background-image: url('${path || url}')`),
     })
 
     const title = Widget.Label({
@@ -148,7 +148,7 @@ export default () => Widget.Window({
         widthRequest: 2,
         heightRequest: 2,
         visible: players.as(p => p.length > 0),
-        child: players.as(p => Player(p[0]))
+        children: players.as(p => p.map(Player))
     }),
     keymode: "exclusive",
     setup: self => self.keybind("Escape", () => App.closeWindow(WINDOW_NAME)),

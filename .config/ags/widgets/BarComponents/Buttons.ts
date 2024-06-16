@@ -1,43 +1,55 @@
 const Mpris = await Service.import("mpris")
+import {MprisPlayer} from "types/service/mpris"
 const Battery = await Service.import("battery")
 const Audio = await Service.import("audio")
 
 import Brightness from "service/Brightness"
 import icons from "lib/icons"
 
-const PanelButton = (callback: () => any, icon: string, className?: string) => Widget.Button({
-    onClicked: () => callback(),
-    classNames: ["panel-button", className ?? ""],
-    child: Widget.Icon(icon)
+export const Launcher = () => Widget.Button({
+    onClicked: () => App.toggleWindow("launcher"),
+    classNames: ["panel-button", "launcher-button"],
+    child: Widget.Icon("system-search-symbolic")
 })
 
 export const Media = () => Widget.Button({
     onClicked: () => App.toggleWindow("media"),
-    classNames: ["media-button", "panel-button"],
+    classNames: ["panel-button", "media-button"],
     child: Widget.Icon({
-        icon: Mpris.players[0].bind("entry").transform(entry => {
-            return Utils.lookUpIcon(entry) ? entry : icons.media.fallback
-        })
+        icon: icons.media.fallback,
+        setup: self => self.hook(Mpris, self => {
+            const getPlayer = (name = "spotify") => Mpris.getPlayer(name) || Mpris.players[0] || null
+            const getPlayerIcon = (player: MprisPlayer) => Utils.lookUpIcon(player.entry) ? player.entry : icons.media.fallback
+
+            let player = Mpris.getPlayer("spotify") || Mpris.players[0] || null
+
+            if (!player) {
+                self.icon = icons.media.fallback
+                return
+            }
+
+            self.icon = getPlayerIcon(getPlayer())
+        }, "notify::players")
     })
 })
 
-export const Notifications = () => PanelButton(
-    () => App.toggleWindow("notifications"),
-    icons.notifications.enabled,
-    "notifications-button"
-)
+export const Notifications = () => Widget.Button({
+    onClicked: () => App.toggleWindow("notifications"),
+    classNames: ["panel-button", "notifications-button"],
+    child: Widget.Icon(icons.notifications.enabled),
+})
 
-export const Power = () => PanelButton(
-    () => App.toggleWindow("powermenu"),
-    icons.power.shutdown,
-    "powermenu-button"
-)
+export const Power = () => Widget.Button({
+    onClicked: () => App.toggleWindow("powermenu"),
+    classNames: ["panel-button", "powermenu-button"],
+    child: Widget.Icon(icons.power.shutdown),
+})
 
 export const BatteryIndicator = () => Widget.Box({
     classNames: ["panel-button", "battery-indicator"],
     visible: Battery.bind("available"),
     children: [
-        Widget.Icon({icon: Battery.bind("icon-name")}),
+        Widget.Icon({icon: Battery.bind("icon_name")}),
         Widget.Label({
             label: Battery.bind("percent").as(p => `${Math.floor(p)}%`)
         })
