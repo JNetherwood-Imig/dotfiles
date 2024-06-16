@@ -1,23 +1,19 @@
-const main = "/tmp/ags/greeter.js";
+#!/usr/bin/env -S ags -b compile-greeter -c
 
-try {
-    await Utils.execAsync([
-        "bun",
-        "build",
-        `${App.configDir}/greeter/main.ts`,
-        "--outfile",
-        main,
-        "--external",
-        "resource://*",
-        "--external",
-        "gi://*",
-        "--external",
-        "file://*",
-    ]);
-    await import(`file://${main}`);
-} catch (error) {
-    console.error(error);
-    App.quit();
-}
+Utils.exec([
+    "bun",
+    "build",
+    `${App.configDir}/greeter/main.ts`,
+    "--outfile",
+    "/tmp/ags/greeter.js",
+    "--external",
+    "resource://*",
+    "--external",
+    "gi://*",
+    "--external",
+    "file://*",
+]);
+
+App.quit()
 
 export {};

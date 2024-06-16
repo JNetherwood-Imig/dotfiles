@@ -13,9 +13,9 @@ const revealer = Widget.Revealer({
             AppIcon("thorium"),
             AppIcon("spotify"),
             AppIcon("files"),
+            AppIcon("code"),
             AppIcon("webstorm"),
             AppIcon("clion"),
-            AppIcon("code"),
             AppIcon("minecraft"),
         ]
     })
