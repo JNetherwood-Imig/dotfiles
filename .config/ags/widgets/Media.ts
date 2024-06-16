@@ -14,6 +14,7 @@ function LengthString(length: number): string {
 }
 
 function Player(player: MprisPlayer) {
+    if (!player) return Widget.Box()
     const img = Widget.Box({
         className: "cover",
         vpack: "start",
