@@ -37,9 +37,7 @@ export const BatteryIndicator = () => Widget.Box({
     classNames: ["panel-button", "battery-indicator"],
     visible: Battery.bind("available"),
     children: [
-        Widget.Icon({
-            icon: Utils.merge([Battery.bind("percent"), Battery.bind("charging")], (percent: number, charging: boolean) => 
-                `battery-level-${Math.floor(percent > 0 ? percent / 10 : 0) * 10}${charging ? "-charging" : ""}-symbolic`)}),
+        Widget.Icon({icon: Battery.bind("icon-name")}),
         Widget.Label({
             label: Battery.bind("percent").as(p => `${Math.floor(p)}%`)
         })

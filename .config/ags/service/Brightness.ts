@@ -7,6 +7,7 @@ class BrightnessService extends Service {
       },
       {
         "value": ["float", "rw"],
+        "available": ["boolean", "r"]
       },
     );
   }
@@ -15,6 +16,7 @@ class BrightnessService extends Service {
 
   #brightnessValue = 0;
   #max = Number(Utils.exec("brightnessctl max"));
+  #available = false;
 
   get value() {
     return this.#brightnessValue;
@@ -25,6 +27,10 @@ class BrightnessService extends Service {
     if (value > 1) value = 1;
 
     Utils.execAsync(`brightnessctl set ${value * 100}% -q`);
+  }
+
+  get available() {
+    return this.#available;
   }
 
   constructor() {
