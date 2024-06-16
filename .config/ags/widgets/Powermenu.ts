@@ -3,11 +3,9 @@ import Power from "service/Power"
 
 const WINDOW_NAME = "powermenu";
 
-const PowerButton = ( callback: () => any, icon: string) => Widget.Button({
+const PowerButton = (callback: () => any, icon: string) => Widget.Button({
     hexpand: true,
     vexpand: true,
-    hpack: "center",
-    vpack: "center",
     className: "power-button",
     onClicked: () => {
         App.closeWindow(WINDOW_NAME);
@@ -22,33 +20,34 @@ export default () => Widget.Window({
     widthRequest: 1200,
     heightRequest: 200,
     visible: false,
-    setup: self => self.keybind("Escape", () => App.closeWindow(WINDOW_NAME)),
+    keymode: "exclusive",
+    setup: self => {self.keybind("Escape", () => App.closeWindow(WINDOW_NAME)); Power.lock_cmd = "hyprlock";},
     child: Widget.Box({
         children: [
-            PowerButton({
-                callback: () => Power.lock(),
-                icon: icons.power.lock,
-            }),
-            PowerButton({
-                callback: () => Power.exit(),
-                icon: icons.power.exit,
-            }),
-            PowerButton({
-                callback: () => Power.suspend(),
-                icon: icons.power.suspend,
-            }),
-            PowerButton({
-                callback: () => Power.hibernate(),
-                icon: icons.power.hibernate,
-            }),
-            PowerButton({
-                callback: () => Power.reboot(),
-                icon: icons.power.reboot,
-            }),
-            PowerButton({
-                callback: () => Power.shutdown(),
-                icon: icons.power.shutdown,
-            }),
+            PowerButton(
+                () => Power.lock(),
+                icons.power.lock,
+            ),
+            PowerButton(
+                () => Power.exit(),
+                icons.power.exit,
+            ),
+            PowerButton(
+                () => Power.suspend(),
+                icons.power.suspend,
+            ),
+            PowerButton(
+                () => Power.hibernate(),
+                icons.power.hibernate,
+            ),
+            PowerButton(
+                () => Power.reboot(),
+                icons.power.reboot,
+            ),
+            PowerButton(
+                () => Power.shutdown(),
+                icons.power.shutdown,
+            ),
         ]
     })
 })

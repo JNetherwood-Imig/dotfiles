@@ -1,6 +1,6 @@
 import Clock from "widgets/BarComponents/Clock"
-import {Media, Notifications, Power} from "widgets/BarComponents/Buttons"
-import Volume from "widgets/BarComponents/Volume"
+import {Media, Notifications, Power, BatteryIndicator, Volume, BrightnessIndicator} from "widgets/BarComponents/Buttons"
+// import Volume from "widgets/BarComponents/Volume"
 import Workspaces from "widgets/BarComponents/Workspaces";
 
 const Left = () => Widget.Box({
@@ -25,7 +25,10 @@ const Right = () => Widget.Box({
     spacing: 8,
     children: [
         // Tray
-        // Bluetooth, Volume, Wi-fi
+        // Bluetooth, Wi-fi
+        BrightnessIndicator(),
+        Volume(),
+        BatteryIndicator(),
         Power(),
     ],
 })

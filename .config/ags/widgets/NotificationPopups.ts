@@ -1,7 +1,6 @@
 import Notification from "./Notification";
 
 const notifications = await Service.import("notifications");
-const {timeout, idle} = Utils;
 
 function Animated(id: number) {
     const notification = notifications.getNotification(id)!;
@@ -26,16 +25,16 @@ function Animated(id: number) {
         child: outer,
     });
 
-    idle(() => {
+    Utils.idle(() => {
         outer.reveal_child = true;
     });
 
     return Object.assign(box, {
         dismiss() {
             (inner.reveal_child = false),
-                timeout(transitionDuration, () => {
+                Utils.timeout(transitionDuration, () => {
                     outer.reveal_child = false;
-                    timeout(transitionDuration, () => box.destroy());
+                    Utils.timeout(transitionDuration, () => box.destroy());
                 });
         },
     });

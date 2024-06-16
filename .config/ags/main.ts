@@ -16,7 +16,6 @@ App.config({
         Dock(),
         Powermenu(),
         // control center
-        // power menu
         // notification center
         // dashboard
     ],

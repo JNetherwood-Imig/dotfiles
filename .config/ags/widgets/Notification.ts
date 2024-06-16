@@ -10,9 +10,7 @@ function NotificationIcon({app_entry, app_icon, image}: Notification) {
             vpack: "start",
             hexpand: false,
             className: "image",
-            css: `
-                background-image: url("${image}");
-            `,
+            css: `background-image: url("${image}");`,
         });
     }
 

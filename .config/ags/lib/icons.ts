@@ -21,12 +21,12 @@ export default {
   },
   power: {
     lock: "lock-symbolic",
-    exit: "",
-    suspend: "",
-    hibernate: "",
+    exit: "exit-symbolic",
+    suspend: "suspend-symbolic",
+    hibernate: "hibernate-symbolic",
     reboot: "system-reboot-symbolic",
     shutdown: "system-shutdown-symbolic"
   },
 };
 
-App.addIcons("assets/icons");
+App.addIcons(`${App.configDir}/assets/icons`);

@@ -13,7 +13,7 @@ function LengthString(length: number): string {
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 }
 
-function Player(player: MprisPlayer = mpris.players[0]) {
+function Player(player: MprisPlayer) {
     const img = Widget.Box({
         className: "cover",
         vpack: "start",
@@ -56,7 +56,7 @@ function Player(player: MprisPlayer = mpris.players[0]) {
         className: "position",
         hpack: "start",
         setup: self => {
-            const Update = (_: any, time: any) => {
+            const Update = (_: unknown, time?: number) => {
                 self.label = LengthString(time || player.position)
                 self.visible = player.length > 0
             }
@@ -80,8 +80,7 @@ function Player(player: MprisPlayer = mpris.players[0]) {
         vpack: "start",
         tooltipText: player.identity || "",
         icon: player.bind("entry").transform(entry => {
-            const name = `${entry}-symbolic`
-            return Utils.lookUpIcon(name) ? name : Utils.lookUpIcon(player.identity) ? player.identity : icons.media.fallback
+            return Utils.lookUpIcon(entry) ? entry : Utils.lookUpIcon(player.identity) ? player.identity : icons.media.fallback
         }),
     })
 
@@ -90,8 +89,8 @@ function Player(player: MprisPlayer = mpris.players[0]) {
         onClicked: () => player.playPause(),
         visible: player.bind("can_play"),
         child: Widget.Icon({
-            icon: player.bind("play_back_status").transform(s => {
-                switch (s) {
+            icon: player.bind("play_back_status").transform(status => {
+                switch (status) {
                     case "Playing":
                         return icons.media.pause
                     case "Paused":
@@ -149,7 +148,7 @@ export default () => Widget.Window({
         widthRequest: 2,
         heightRequest: 2,
         visible: players.as(p => p.length > 0),
-        child: Player()
+        child: players.as(p => Player(p[0]))
     }),
     keymode: "exclusive",
     setup: self => self.keybind("Escape", () => App.closeWindow(WINDOW_NAME)),
