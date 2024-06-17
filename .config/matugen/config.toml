@@ -1,0 +1,44 @@
+[config]
+reload_apps = false
+set_wallpaper = true
+wallpaper_tool = "Swww"
+swww_options = [
+	"-t",
+	"grow"
+]
+
+[config.reload_apps_list]
+kitty = true
+gtk_theme = false
+
+[templates.kitty]
+input_path = "~/.config/matugen/templates/kitty.conf"
+output_path = "~/.config/kitty/kitty.conf"
+
+[templates.ags]
+input_path = "~/.config/matugen/templates/ags-colors.scss"
+output_path = "~/.config/ags/style/colors.scss"
+
+[templates.hypr]
+input_path = "~/.config/matugen/templates/hypr_colors.conf"
+output_path = "~/.config/hypr/colors.conf"
+
+[templates.material-adwaita-dark-gtk3]
+input_path = "~/.config/matugen/templates/material-adwaita-gtk3.css"
+output_path = "~/.themes/material-adwaita-dark/gtk-3.0/gtk.css"
+
+[templates.material-adwaita-dark-gtk3-dark]
+input_path = "~/.config/matugen/templates/material-adwaita-gtk3-dark.css"
+output_path = "~/.themes/material-adwaita-dark/gtk-3.0/gtk-dark.css"
+
+[templates.material-adwaita-dark-gtk4]
+input_path = "~/.config/matugen/templates/material-adwaita-gtk4.css"
+output_path = "~/.themes/material-adwaita-dark/gtk-4.0/gtk.css"
+
+[templates.material-adwaita-dark-gtk4-dark]
+input_path = "~/.config/matugen/templates/material-adwaita-gtk4-dark.css"
+output_path = "~/.themes/material-adwaita-dark/gtk-4.0/gtk-dark.css"
+
+[templates.libadwaita]
+input_path = "~/.config/matugen/templates/libadwaita.css"
+output_path = "~/.themes/material-adwaita-dark/gtk-3.0/libadwaita.css"

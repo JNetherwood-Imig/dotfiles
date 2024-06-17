@@ -1,4 +1,4 @@
-@import "colors.scss";
+@import "colors";
 
 .player {
   padding: 10px;
@@ -22,10 +22,12 @@
 
 .player .title {
   font-size: 1.2em;
+  color: $foreground;
 }
 
-.player.artist {
+.player .artist {
   font-size: 1.1em;
+  color: $foreground;
 }
 
 .player scale.position {

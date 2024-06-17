@@ -34,10 +34,10 @@ const Right = () => Widget.Box({
     ],
 })
 
-export default (monitor: number = 0) => Widget.Window({
-    name: `bar-${monitor}`,
+export default () => Widget.Window({
+    name: "bar",
     className: "bar",
-    monitor,
+    monitor: 0,
     anchor: [
         "top",
         "left",

@@ -1,11 +1,12 @@
-@import "colors.scss";
+@import "colors";
 
 window.bar {
   background-color: transparentize($background, 0.3);
   border-bottom: 1px solid $border;
-  button {
-    background-color: transparent;
-  }
+}
+
+.bar {
+ color: $foreground; 
 }
 
 $workspace-transition: 300ms;
@@ -46,4 +47,11 @@ $workspace-transition: 300ms;
 .panel-button {
   font-size: 1.25em;
   padding: 2px 5px;
+  background-color: transparent;
+}
+
+.bar button {
+  background: transparent;
+  border-color: transparent;
+  color: $foreground;
 }

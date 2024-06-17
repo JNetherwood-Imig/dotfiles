@@ -1,0 +1,5 @@
+$background: {{ colors.background.default.hex }};
+$foreground: {{ colors.on_background.default.hex }};
+$accent: {{ colors.primary.default.hex }};
+$border: {{ colors.outline.default.hex }};
+$border_inactive: {{ colors.outline_variant.default.hex }}
