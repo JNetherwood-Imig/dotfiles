@@ -1,5 +1,5 @@
 const Mpris = await Service.import("mpris")
-import {MprisPlayer} from "types/service/mpris"
+import { MprisPlayer } from "types/service/mpris"
 const Battery = await Service.import("battery")
 const Audio = await Service.import("audio")
 
@@ -51,9 +51,15 @@ export const BatteryIndicator = () => Widget.Box({
     children: [
         Widget.Icon({icon: Battery.bind("icon_name")}),
         Widget.Label({
-            label: Battery.bind("percent").as(p => `${Math.floor(p)}%`)
+            label: Battery.bind("percent").as(p => Battery.charged ? "100%" : `${p}%`)
         })
-    ]
+    ],
+    setup: self => self.hook(Battery, () => {
+        self.toggleClassName("low", Battery.percent <= 20)
+        self.toggleClassName("very-low", Battery.percent <= 10)
+        self.toggleClassName("charging", Battery.charging)
+        self.toggleClassName("charged", Battery.charged)
+    }),
 })
 
 export const Volume = () => Widget.Box({

@@ -25,8 +25,6 @@ const Right = () => Widget.Box({
     spacing: 8,
     children: [
         Tray(),
-        // Wi-fi
-        // Bluetooth
         BrightnessIndicator(),
         Volume(),
         BatteryIndicator(),

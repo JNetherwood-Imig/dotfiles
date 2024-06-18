@@ -44,14 +44,30 @@ $workspace-transition: 300ms;
   font-size: 1.25em;
 }
 
-.panel-button {
-  font-size: 1.25em;
-  padding: 2px 5px;
+.bar button.panel-button {
   background-color: transparent;
-}
-
-.bar button {
-  background: transparent;
   border-color: transparent;
   color: $foreground;
+  padding: 2px;
+  margin: 5px;
+  font-size: 1.25em;
+  &:hover {
+    background-color: transparentize($foreground, 0.8);
+  }
+  &:active {
+    background-color: transparentize($accent, 0.8);
+  }
+}
+
+.bar .battery-indicator.low image {
+  color: orange;
+}
+
+.bar .battery-indicator.very-low image {
+  color: red;
+}
+
+.bar .battery-indicator.charging image,
+.bar .battery-indicator.charged image {
+  color: green;
 }
