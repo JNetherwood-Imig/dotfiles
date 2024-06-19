@@ -39,6 +39,8 @@ class BrightnessService extends Service {
     const brightness = `/sys/class/backlight/${this.#interface}/brightness`;
     Utils.monitorFile(brightness, () => this.#onChange());
 
+    this.#available = this.#max > 1;
+
     this.#onChange();
   }
 

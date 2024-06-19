@@ -85,6 +85,7 @@ export const Volume = () => Widget.Box({
 
 export const BrightnessIndicator = () => Widget.Box({
     classNames: ["panel-button", "brightness-indicator"],
+    visible: Brightness.available,
     children: [
         Widget.Icon("display-brightness-symbolic"),
         Widget.Label().hook(Brightness, self => {

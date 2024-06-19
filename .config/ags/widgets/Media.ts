@@ -2,8 +2,8 @@ import icons from "lib/icons"
 
 import {type MprisPlayer} from "types/service/mpris";
 
-const mpris = await Service.import("mpris");
-const players = mpris.bind("players");
+const Mpris = await Service.import("mpris");
+const players = Mpris.bind("players");
 
 const WINDOW_NAME = "media";
 
@@ -12,6 +12,8 @@ function LengthString(length: number): string {
     const seconds = Math.floor(length % 60)
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 }
+
+const getPlayer = (name = "spotify") => Mpris.getPlayer(name) || Mpris.players[0] || null
 
 function Player(player: MprisPlayer) {
     if (!player) return Widget.Box()
@@ -149,7 +151,7 @@ export default () => Widget.Window({
         widthRequest: 2,
         heightRequest: 2,
         visible: players.as(p => p.length > 0),
-        children: players.as(p => p.map(Player))
+        child: Player(getPlayer())
     }),
     keymode: "exclusive",
     setup: self => self.keybind("Escape", () => App.closeWindow(WINDOW_NAME)),

@@ -3,6 +3,7 @@ import { type TrayItem } from "types/service/systemtray"
 const Tray = await Service.import("systemtray")
 
 const TrayIcon = (item: TrayItem) => Widget.Button({
+    className: "tray-item",
     onPrimaryClick: (_, event) => item.activate(event),
     onSecondaryClick: (_, event) => item.openMenu(event),
     child: Widget.Icon().bind("icon", item, "icon"),

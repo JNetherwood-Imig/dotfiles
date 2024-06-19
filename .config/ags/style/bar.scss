@@ -71,3 +71,7 @@ $workspace-transition: 300ms;
 .bar .battery-indicator.charged image {
   color: green;
 }
+
+.bar button.tray-item {
+  background-color: transparent;
+}
