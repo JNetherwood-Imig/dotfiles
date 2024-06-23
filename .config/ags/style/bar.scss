@@ -13,6 +13,14 @@ $workspace-transition: 300ms;
 
 .workspaces {
   padding-left: 5px;
+  & button {
+    background: transparent;
+    padding: 2px;
+    margin: 5px 0;
+    &:hover {
+      background-color: transparentize($foreground, 0.8);
+    }
+  }
 }
 
 .workspaces label {
@@ -20,8 +28,8 @@ $workspace-transition: 300ms;
   min-width: 10px;
   min-height: 10px;
   border-radius: 5px;
+  margin: 0 3px;
   background-color: gray;
-  margin: 0 4px;
   transition-duration: $workspace-transition;
 }
 
@@ -48,7 +56,9 @@ $workspace-transition: 300ms;
   background-color: transparent;
   border-color: transparent;
   color: $foreground;
-  padding: 2px;
+  padding: 0;
+  min-width: 25px;
+  min-height: 25px;
   margin: 5px;
   font-size: 1.25em;
   &:hover {

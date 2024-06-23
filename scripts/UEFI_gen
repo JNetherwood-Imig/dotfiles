@@ -1,0 +1,4 @@
+#!/bin/bash
+efibootmgr -d /dev/nvme0n1 -p 1 -c -L "Arch Linux" -l /vmlinuz-linux -u 'root=UUID=37cf3499-76cf-49b8-b0de-a85401ff0ec1 resume=UUID=5260acbf-2f9a-4981-8072-84c059ecd1b1 rw rootflags=subvol=@ loglevel=3 quiet nvidia_drm.modeset=1 nvidia_drm.fbdev=1 nvidia.NVreg_PreserveVideoMemoryAllocations=1 nvidia.NVreg_TemporaryFilePath=/var/tmp initrd=\intel-ucode.img initrd=\initramfs-linux.img'
+exit 0
+# See man efibootmgr

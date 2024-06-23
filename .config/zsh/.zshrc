@@ -62,3 +62,6 @@ setopt globdots
 eval "$(oh-my-posh init zsh --config ${XDG_CONFIG_HOME}/ohmyposh/config.yaml)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+# bun completions
+[ -s "/home/jackson/.bun/_bun" ] && source "/home/jackson/.bun/_bun"
