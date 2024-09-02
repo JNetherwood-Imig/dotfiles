@@ -1,6 +1,17 @@
 @import "colors";
 
+.powermenu-container {
+  padding: 20px;
+  background-color: $background;
+  border-radius: 20px;
+}
+
 .power-button {
     font-size: 4em;
-    background-color: $background;
+    border-radius: 20px;
+    margin: 5px;
+    background-color: transparentize($foreground, 0.9);
+    &:hover {
+      background-color: transparentize($foreground, 0.8)
+    }
 }

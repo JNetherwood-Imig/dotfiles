@@ -1,5 +1,5 @@
 import Clock from "widgets/BarComponents/Clock"
-import {Launcher, Media, Notifications, Power, BatteryIndicator, Volume, BrightnessIndicator} from "widgets/BarComponents/Buttons"
+import {Launcher, Media, Notifications, Power, BatteryIndicator, Volume, BrightnessIndicator, ControlCenter} from "widgets/BarComponents/Buttons"
 import Workspaces from "widgets/BarComponents/Workspaces"
 import Tray from "widgets/BarComponents/Tray"
 
@@ -28,6 +28,7 @@ const Right = () => Widget.Box({
         BrightnessIndicator(),
         Volume(),
         BatteryIndicator(),
+        //ControlCenter(),
         Power(),
     ],
 })

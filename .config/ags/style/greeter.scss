@@ -1,0 +1,10 @@
+@import "colors";
+
+window.greeter {
+  background-color: $background;
+}
+
+.greeter-box {
+  background-color: $background;
+  padding: 10px;
+}

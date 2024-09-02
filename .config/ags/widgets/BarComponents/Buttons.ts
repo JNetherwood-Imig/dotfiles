@@ -62,6 +62,14 @@ export const BatteryIndicator = () => Widget.Box({
     }),
 })
 
+export const ControlCenter = () => Widget.Button({
+    child: Widget.Box([
+        Widget.Icon(icons.audio.volume.high),
+        Widget.Icon("bluetooth-symbolic"),
+    ]),
+    onClicked: () => App.toggleWindow("control-center"),
+})
+
 export const Volume = () => Widget.Box({
     classNames: ["panel-button", "volume-indicator"],
     children: [

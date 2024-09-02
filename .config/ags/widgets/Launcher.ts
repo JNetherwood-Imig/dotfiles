@@ -1,7 +1,7 @@
 const apps = await Service.import("applications")
 const { query } = apps
 import {AppIcon} from "lib/utils";
-import type { Application } from "types/service/applications"
+import { type Application } from "types/service/applications"
 
 const WINDOW_NAME = "launcher"
 

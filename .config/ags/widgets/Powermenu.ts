@@ -24,6 +24,8 @@ export default () => Widget.Window({
     keymode: "exclusive",
     setup: self => {self.keybind("Escape", () => App.closeWindow(WINDOW_NAME)); Power.lock_cmd = "hyprlock";},
     child: Widget.Box({
+        className: "powermenu-container",
+        vpack: "center",
 	    hpack: "center",
         children: [
             PowerButton(
