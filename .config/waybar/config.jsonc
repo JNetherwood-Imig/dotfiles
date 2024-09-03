@@ -6,19 +6,17 @@
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": [
         "custom/launcher",
-        "hyprland/workspaces",
-        "custom/media"
+        "hyprland/window"
     ],
     "modules-center": [
-        "hyprland/window"
+        "clock"
     ],
     "modules-right": [
         "tray",
         "idle_inhibitor",
-        "pulseaudio",
-        "network",
+        // "pulseaudio",
+        "wireplumber",
         "battery",
-        "clock",
         "custom/power"
     ],
     // Modules configuration
