@@ -1,8 +1,8 @@
 @import "colors";
 
 window.bar {
-  background-color: transparentize($background, 0.3);
-  border-bottom: 1px solid $border;
+  background-color: $background;
+  border-bottom: 2px solid $border-inactive;
 }
 
 .bar {

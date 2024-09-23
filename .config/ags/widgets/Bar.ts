@@ -1,13 +1,13 @@
 import Clock from "widgets/BarComponents/Clock"
 import {Launcher, Media, Notifications, Power, BatteryIndicator, Volume, BrightnessIndicator, ControlCenter} from "widgets/BarComponents/Buttons"
-import Workspaces from "widgets/BarComponents/Workspaces"
+//import Workspaces from "widgets/BarComponents/Workspaces"
 import Tray from "widgets/BarComponents/Tray"
 
 const Left = () => Widget.Box({
     hpack: "start",
     children: [
         Launcher(),
-        Workspaces()
+        //Workspaces()
     ]
 })
 

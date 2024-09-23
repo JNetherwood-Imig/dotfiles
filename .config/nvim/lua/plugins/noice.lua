@@ -9,9 +9,6 @@ return {
     },
     {
         "rcarriga/nvim-notify",
-        config = true,
-        opts = {
-            background_colour = "#000000"
-        }
+        config = true
     }
 }

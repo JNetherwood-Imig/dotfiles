@@ -1,9 +1,10 @@
 return {
     { "sainnhe/gruvbox-material" },
+    { "ellisonleao/gruvbox.nvim" },
     {
-        "ellisonleao/gruvbox.nvim",
-        config = function()
-            vim.cmd.colorscheme("gruvbox")
+        "lifepillar/vim-gruvbox8",
+        config = function ()
+            vim.cmd.colorscheme("gruvbox8")
         end
-    }
+    },
 }
